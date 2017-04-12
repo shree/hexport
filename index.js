@@ -101,9 +101,9 @@ app.get('/api/v1/shipments', (req,res)=>{
           for(var lo = 0; lo < recordsArray.length; lo++){
             recordsArray[lo].id = parseInt(recordsArray[lo].id);
           }
-          // recordsArray.sort((a,b)=>{
-          //   return a.id > b.id;
-          // });
+          recordsArray.sort((a,b)=>{
+            return a.id > b.id;
+          });
 
           if(sort === 'international_departure_date'){
             if(direction === 'asc'){
